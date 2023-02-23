@@ -2,6 +2,7 @@ import { Container, Section1, Section2 } from './App.styled';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// import { RotatingLines } from 'react-loader-spinner';
 import { selectIsLoading, selectError } from 'redux/selectors';
 import { ContactForm } from './Form/ContactForm';
 import { ContactList } from './ContactList/ContactList';
