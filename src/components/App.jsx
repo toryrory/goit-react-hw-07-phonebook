@@ -1,8 +1,8 @@
-import { Container, Section1, Section2 } from './App.styled';
+import { Container, Section1, Section2, Spinner } from './App.styled';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { RotatingLines } from 'react-loader-spinner';
+import { RotatingLines } from 'react-loader-spinner';
 import { selectIsLoading, selectError } from 'redux/selectors';
 import { ContactForm } from './Form/ContactForm';
 import { ContactList } from './ContactList/ContactList';
@@ -26,7 +26,11 @@ export function App() {
       <Section2>
         <h2>Contacts</h2>
         <ContactFilter />
-        {isLoading && !error && <p>Loading contacts...</p>}
+        {isLoading && !error && (
+          <Spinner>
+            <RotatingLines strokeColor="grey" width="35" />
+          </Spinner>
+        )}
         <ContactList />
       </Section2>
     </Container>
